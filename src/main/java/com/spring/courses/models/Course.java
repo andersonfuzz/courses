@@ -20,9 +20,19 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty("_id")
     private Long id;
+    /*
+     * {
+     * Quando você quer converter um objeto Java em JSON ou um JSON em um objeto
+     * Java, você pode usar bibliotecas como o Jackson para fazer essa conversão de
+     * forma automática
+     * Ao usar a anotação @JsonProperty, você pode especificar o nome do campo no
+     * JSON que corresponde a cada atributo da classe.
+     * ==>nullable = false<== indica que o valor desse campo não pode ser nulono
+     * banco de dados
+     * }
+     */
 
-    @Column(length = 200, nullable = false) // ==>nullable = false<== indica que o valor desse campo não pode ser nulo
-                                            // no banco de dados
+    @Column(length = 200, nullable = false)
     private String name;
 
     @Column(length = 10, nullable = false)
